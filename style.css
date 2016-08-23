@@ -1,0 +1,18 @@
+* {
+  background-color: rgb(182,79,145);
+  margin: auto, 0;
+}
+body {
+  font-family: Times;
+  color: rgb(100,45,2);
+}
+#special {
+  font-family: 'Baloo Chettan', cursive;
+  color: rgb(86,7,218);
+}
+p {
+  background-color: rgb (86,134,155);
+}
+.list {
+  background-color: rgb (86,134,155);
+}
