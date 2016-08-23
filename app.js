@@ -24,37 +24,73 @@ Store.prototype.cookiesPerDay = function(){
     this.totalCookie += this.cookiesPerHour();
   };
 };
+// Store.prototype.render = function() {
+//   this.cookiesPerDay();
+//
+//   var ul = document.createElement('ul');
+//   var li = document.createElement('li');
+//   var h2 = document.createElement('h2');
+//   var main = document.getElementById('store_info');
+//
+//   h2.textContent = this.location;
+//   li.textContent = 'Total ' + this.totalCookie + ' cookies';
+//
+//   ul.appendChild(h2);
+//   for(var i = 0; i < 7; i++) {
+//     var li2 = document.createElement('li');
+//     li2.textContent = (i + 6) + 'am' + ' ' + this.hourly[i] + ' cookies';
+//     ul.appendChild(li2);
+//   }
+//   for(var j = 7; j < 14; j++) {
+//     var li3 = document.createElement('li');
+//     li3.textContent = (j - 6) + 'pm' + ' ' + this.hourly[j] + ' cookies';
+//     ul.appendChild(li3);
+//   }
+//   ul.appendChild(li);
+//
+//   main.appendChild(ul);
+// };
+// var pike = new Store('1st and Pike', 23, 65, 6.3);
+//
+// pike.render();
+
 Store.prototype.render = function() {
   this.cookiesPerDay();
+// To create the table header
+  var salesTable = document.createElement = ('table');
+  var salesHead = document.createElement = ('thead');
+  var tableHRow = document.createElement = ('tr');
+  var tableHeader = document.createElement = ('th');
+    //setting content for the header
+  var time = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
+  for (var i = 0; i = time.length; i++) {
+    tableHeader.textContent = time[i];
+    tableHRow.appendChild(tableHeader);
+  }
+  salesHead.appendChild(tableHRow);
+  salesTable.appendChild(salesHead);
+  // To create the body
+  var tableBody = document.createElement = ('tbody');
+  var tableRow = document.createElement = ('tr');
+  var tblHeader = document.createElement = ('th');
+  var tableData = document.createElement = ('td');
 
-  var ul = document.createElement('ul');
-  var li = document.createElement('li');
-  var h2 = document.createElement('h2');
+  // setting content for the body
+  tblHeader.textContent = this.location;
+  for (var j = 0; j = hourly.length; j++) {
+    tableData.textContent = this.hourly;
+    tableRow.appendChild(tableData);
+  }
+  tableRow.appendChild(tblHeader);
+  tableBody.appendChild(tableRow);
+  salesTable.appendChild(tableBody);
+
   var main = document.getElementById('store_info');
-
-  h2.textContent = this.location;
-  li.textContent = 'Total ' + this.totalCookie + ' cookies';
-
-  ul.appendChild(h2);
-  for(var i = 0; i < 7; i++) {
-    var li2 = document.createElement('li');
-    li2.textContent = (i + 6) + 'am' + ' ' + this.hourly[i] + ' cookies';
-    ul.appendChild(li2);
-  }
-  for(var j = 7; j < 14; j++) {
-    var li3 = document.createElement('li');
-    li3.textContent = (j - 6) + 'pm' + ' ' + this.hourly[j] + ' cookies';
-    ul.appendChild(li3);
-  }
-  ul.appendChild(li);
-
-  main.appendChild(ul);
+  main.appendChild(salesTable);
 };
 var pike = new Store('1st and Pike', 23, 65, 6.3);
 
-pike.render();
-
-
+pike.render;
 // var pike = {
 //   location: '1st and Pike',
 //   minCust: 23,
