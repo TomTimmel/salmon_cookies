@@ -1,0 +1,16 @@
+* {
+
+}
+
+body {
+  display: inline;
+  text-align: center;
+  width: 30%;
+  font-family: Arial;
+  background-color: rgb(67,90,89);
+  color: rgb(132,47,0);
+}
+li {
+  background-color: rgb(53,0,100);
+  list-style: none;
+}
