@@ -1,4 +1,4 @@
-/** {
+* {
 
 }
 
@@ -8,12 +8,18 @@ body {
   width: 30%;
   font-family: Arial;
   background-color: rgb(67,90,89);
-  color: rgb(132,47,0);
+  color: rgb(132,25,0);
 }
 li {
   background-color: rgb(53,0,100);
   list-style: none;
-}*/
+}
 table {
   border: 1px solid black;
+}
+td {
+  border: 1px solid black;
+}
+tr th {
+width: 100px;
 }
