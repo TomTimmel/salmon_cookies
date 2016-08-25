@@ -1,4 +1,4 @@
-* {
+/** {
 
 }
 
@@ -13,6 +13,9 @@ body {
 li {
   background-color: rgb(53,0,100);
   list-style: none;
+}*/
+table {
+  border: 1px solid black;
 }
 tr.even{
   background-color: red;

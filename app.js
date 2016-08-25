@@ -9,6 +9,7 @@ function Store(location, minCust, maxCust, avgCookies) {
   this.totalCookie = 0;
 
   stores.push(this);
+
 };
 
 Store.prototype.generateRandom = function() {
