@@ -53,46 +53,6 @@ function handleSubmit(event) {
 
 };
 
-// Store.prototype.render = function() {
-//   this.cookiesPerDay();
-// // To create the table header
-//   var salesTable = document.createElement('table');
-//
-//   var salesHead = document.createElement('thead');
-//   var tableHRow = document.createElement('tr');
-//
-//   //setting content for the header
-//   var time = ['','6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am','12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Total'];
-//   for (var i = 0; i < time.length; i++) {
-//     var tableHeader = document.createElement('th');
-//     tableHeader.textContent += time[i];
-//     tableHRow.appendChild(tableHeader);
-//   }
-//   salesHead.appendChild(tableHRow);
-//   salesTable.appendChild(salesHead);
-//
-//   // To create the body
-//   var tableBody = document.createElement('tbody');
-//   var tableRow = document.createElement('tr');
-//   var tblHeader = document.createElement('th');
-//   var tableData1 = document.createElement('td');
-// // setting content for the body
-//   tblHeader.textContent = this.location;
-//   tableRow.appendChild(tblHeader);
-//   for (var j = 0; j < this.hourly.length; j++) {
-//     var tableData = document.createElement('td');
-//     tableData.textContent = this.hourly[j];
-//     tableRow.appendChild(tableData);
-//   }
-//   tableData1.textContent = this.totalCookie;
-//   tableRow.appendChild(tableData1);
-//   tableBody.appendChild(tableRow);
-//   salesTable.appendChild(tableBody);
-//
-//   var main = document.getElementById('store_info');
-//   main.appendChild(salesTable);
-// };
-
 Store.prototype.render = function() {
   this.cookiesPerDay();
 
@@ -127,7 +87,7 @@ function createTable () {
   var salesHead = document.createElement('thead');
   var tableHRow = document.createElement('tr');
   var tableBody = document.createElement('tbody');
-  // tableBody.appendChild(tableRow);
+
   //setting content for the header
   var time = ['','6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am','12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Total'];
   for (var i = 0; i < time.length; i++) {
@@ -148,8 +108,3 @@ function createTable () {
   main.appendChild(salesTable);
 };
 createTable();
-
-
-// for(var m = 0; m < stores.length; m++){
-//   stores[m].render();
-// };
