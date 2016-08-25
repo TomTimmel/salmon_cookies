@@ -7,6 +7,12 @@ body {
   background-color: rgb(67,90,89);
   color: rgb(132,25,0);
 }
+.opaque {
+  display:block;
+  width:480px;
+  margin: 0 auto;
+  opacity: 0.5;
+}
 li {
   background-color: rgb(53,0,100);
   list-style: none;
@@ -14,12 +20,7 @@ li {
 table {
   border: 1px solid black;
 }
-tr.even{
-  background-color: red;
-}
-table {
-  border: 1px solid black;
-}
+
 td {
   border: 1px solid rgb(0, 58, 0);
   text-align: right;
