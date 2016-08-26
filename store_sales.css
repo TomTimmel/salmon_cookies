@@ -1,0 +1,29 @@
+html {
+  background-color: rgb(190, 210, 220);
+
+}
+.header {
+  text-align: center;
+
+}
+.border {
+  border-top-left-radius: 80px;
+}
+
+.products1 {
+  width: 1200px;
+  margin: 0 auto;
+
+}
+.products {
+  float: left;
+  display: inline;
+  height: 470px;
+  width: 400px;
+  background-color: rgb(210, 230, 240);
+}
+.products img {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
