@@ -101,9 +101,9 @@ function createTable () {
   for(var p = 0; p < stores.length; p++){
     var row = stores[p].render();
     tableBody.appendChild(row);
-    console.log(row);
+    // console.log(row);
     // for(var w = 0; w < stores.length; w++){
-    //   hrTotal += stores[w].this.Store[0].hourly[0];
+    //   var hrTotal = stores[w].hourly[0];
     //   console.log(hrTotal);
     // }
   }
