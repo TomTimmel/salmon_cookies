@@ -87,7 +87,8 @@ function createTable () {
   var salesHead = document.createElement('thead');
   var tableHRow = document.createElement('tr');
   var tableBody = document.createElement('tbody');
-
+  var totalData = document.createElement('td');
+  var totalHead = document.createElement('th');
   //setting content for the header
   var time = ['','6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am','12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Total'];
   for (var i = 0; i < time.length; i++) {
@@ -101,13 +102,19 @@ function createTable () {
   for(var p = 0; p < stores.length; p++){
     var row = stores[p].render();
     tableBody.appendChild(row);
-    // console.log(row);
-    // for(var w = 0; w < stores.length; w++){
-    //   var hrTotal = stores[w].hourly[0];
-    //   console.log(hrTotal);
-    // }
   }
-
+  var hourTotal;
+  for(var hours = 1; hours < time.length - 1; hours++){
+    hourTotal = 0;
+    console.log(time[hours]);
+    for(var storeC = 0; storeC < stores.length; storeC++){
+      hourTotal += stores[storeC].hourly[hours];
+      console.log(hourTotal[]);
+      totalData.textContent = hourTotal[hours];
+    }
+  }
+  totalHead.appendChild(totalData);
+  totalHead.appendChild(row);
   salesTable.appendChild(tableBody);
 
   var main = document.getElementById('store_info');
