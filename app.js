@@ -101,7 +101,13 @@ function createTable () {
   for(var p = 0; p < stores.length; p++){
     var row = stores[p].render();
     tableBody.appendChild(row);
+    console.log(row);
+    // for(var w = 0; w < stores.length; w++){
+    //   hrTotal += stores[w].this.Store[0].hourly[0];
+    //   console.log(hrTotal);
+    // }
   }
+
   salesTable.appendChild(tableBody);
 
   var main = document.getElementById('store_info');
