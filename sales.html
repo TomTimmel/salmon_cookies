@@ -7,19 +7,28 @@
   </head>
   <body>
     <img class = "opaque" src = "images/chinook.jpg">
+    <nav>
+      <ul class="nav">
+        <li class="nav"><a id = "home" href = "index.html"> Home Page </a></li>
+        <li class="nav"><a id = "store" href = "store_sales.html"> Gift Ideas </a></li>
+      </UL
+    </nav>
+    <div class="jancky">
+      <p></p>
+    </div>
     <h1> Cookies Needed by Location Each Day </h1>
     <main id="store_info">
 
     </main>
     <form id='store_form'>
       <label>Location</label>
-      <input type="text" name="locat">
+      <input type="text" name="locat" required="required">
       <label>Min Customers</label>
-      <input type="text" name="minc">
+      <input type="number" name="minc" min="0.01" step="0.01">
       <label>Max Customers</label>
-      <input type="text" name="maxc">
+      <input type="number" name="maxc" min="0.01" step="0.01">
       <label>Average Cookies</label>
-      <input type="text" name="avgc">
+      <input type="number" name="avgc" min="0.01" step="0.01">
       <button type="submit">Submit Form</button>
     </form>
     <script type="text/javascript" src = "app.js"></script>

@@ -37,20 +37,25 @@ function handleSubmit(event) {
   var locat = event.target.locat.value;
   var minc = event.target.minc.value;
   var maxc = event.target.maxc.value;
-  var avgc = event.target.avgc.value;
-  console.log(event.target.locat.value);
-  console.log(event.target.minc.value);
-  console.log(event.target.maxc.value);
-  console.log(event.target.avgc.value);
-  var inputStore = new Store(locat, minc, maxc, avgc);
+  if(minc >= maxc){
+    alert('The Minimum value must be lower than the maximum value for customers.');
+    document.getElementById('store_form').reset();
+  }
+  else{
+    var avgc = event.target.avgc.value;
+    console.log(event.target.locat.value);
+    console.log(event.target.minc.value);
+    console.log(event.target.maxc.value);
+    console.log(event.target.avgc.value);
+    var inputStore = new Store(locat, minc, maxc, avgc);
 
-  inputStore.render();
+    inputStore.render();
 
-  var main = document.getElementById('store_info');
-  main.textContent = '';
-  createTable();
-  console.log(inputStore);
-
+    var main = document.getElementById('store_info');
+    main.textContent = '';
+    createTable();
+    document.getElementById('store_form').reset();
+    console.log(inputStore);}
 };
 
 Store.prototype.render = function() {
@@ -103,18 +108,18 @@ function createTable () {
     var row = stores[p].render();
     tableBody.appendChild(row);
   }
-  var hourTotal;
-  for(var hours = 1; hours < time.length - 1; hours++){
-    hourTotal = 0;
-    console.log(time[hours]);
-    for(var storeC = 0; storeC < stores.length; storeC++){
-      hourTotal += stores[storeC].hourly[hours];
-      console.log(hourTotal[]);
-      totalData.textContent = hourTotal[hours];
-    }
-  }
-  totalHead.appendChild(totalData);
-  totalHead.appendChild(row);
+  // var hourTotal;
+  // for(var hours = 1; hours < time.length - 1; hours++){
+  //   hourTotal = 0;
+  //   console.log(time[hours]);
+  //   for(var storeC = 0; storeC < stores.length; storeC++){
+  //     hourTotal += stores[storeC].this.hourly[cookiesPerHour];
+  //     console.log(hourTotal[cookiesPerHour]);
+  //     totalData.textContent = hourTotal[hours];
+  //   }
+  // }
+  // totalHead.appendChild(totalData);
+  // totalHead.appendChild(row);
   salesTable.appendChild(tableBody);
 
   var main = document.getElementById('store_info');
