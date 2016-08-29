@@ -12,6 +12,42 @@ body {
   width:480px;
   margin: 0 auto;
   opacity: 0.5;
+  border-radius: 10px;
+}
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+}
+li.nav {
+  float: left;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+li.nav a {
+  display:inline-block;
+  text-align: center;
+  padding: 6px 6px;
+}
+a#home {
+  background-color: rgb(80, 149, 30);
+  border-radius: 20px;
+}
+a#store {
+  background-color: rgb(80,149,30);
+  border-radius: 20px;
+}
+a#home:hover{
+  background-color: grey;
+  border-radius: 20px;
+}
+a#store:hover{
+  background-color: grey;
+  border-radius: 20px;
+}
+.jancky {
+  height:45px;
 }
 li {
   background-color: rgb(53,0,100);

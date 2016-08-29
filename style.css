@@ -2,11 +2,46 @@
   margin: auto, 0;
 }
 header {
-  margin: auto;
+  margin: 10px auto;
   width: 75%;
 }
 #title {
   text-align: center;
+}
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+}
+li.nav {
+  float: left;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+li.nav a {
+  display:inline-block;
+  text-align: center;
+  padding: 6px 6px;
+}
+a#home {
+  background-color: rgb(80, 145, 30);
+  border-radius: 20px;
+}
+a#store {
+  background-color: rgb(80,149,30);
+  border-radius: 20px;
+}
+a#home:hover{
+  background-color: grey;
+  border-radius: 20px;
+}
+a#store:hover{
+  background-color: grey;
+  border-radius: 20px;
+}
+.jancky {
+  height:45px;
 }
 body {
   background-color: rgb(64, 117, 72);
@@ -17,6 +52,12 @@ body {
   font-family: 'Baloo Chettan', cursive;
   color: rgb(86,7,218);
 }
-.list{
+#flavors{
+  opacity:0.7;
+}
+.cookies {
   background-color: rgb(64, 177 144);
+}
+ul.list{
+  font-size: 20px;
 }
