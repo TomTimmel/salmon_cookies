@@ -37,20 +37,25 @@ function handleSubmit(event) {
   var locat = event.target.locat.value;
   var minc = event.target.minc.value;
   var maxc = event.target.maxc.value;
-  var avgc = event.target.avgc.value;
-  console.log(event.target.locat.value);
-  console.log(event.target.minc.value);
-  console.log(event.target.maxc.value);
-  console.log(event.target.avgc.value);
-  var inputStore = new Store(locat, minc, maxc, avgc);
+  if(minc >= maxc){
+    alert('The Minimum value must be lower than the maximum value for customers.');
+    document.getElementById('store_form').reset();
+  }
+  else{
+    var avgc = event.target.avgc.value;
+    console.log(event.target.locat.value);
+    console.log(event.target.minc.value);
+    console.log(event.target.maxc.value);
+    console.log(event.target.avgc.value);
+    var inputStore = new Store(locat, minc, maxc, avgc);
 
-  inputStore.render();
+    inputStore.render();
 
-  var main = document.getElementById('store_info');
-  main.textContent = '';
-  createTable();
-  console.log(inputStore);
-
+    var main = document.getElementById('store_info');
+    main.textContent = '';
+    createTable();
+    document.getElementById('store_form').reset();
+    console.log(inputStore);}
 };
 
 Store.prototype.render = function() {
@@ -87,7 +92,8 @@ function createTable () {
   var salesHead = document.createElement('thead');
   var tableHRow = document.createElement('tr');
   var tableBody = document.createElement('tbody');
-
+  var totalData = document.createElement('td');
+  var totalHead = document.createElement('th');
   //setting content for the header
   var time = ['','6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am','12:00am', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', 'Total'];
   for (var i = 0; i < time.length; i++) {
@@ -101,13 +107,19 @@ function createTable () {
   for(var p = 0; p < stores.length; p++){
     var row = stores[p].render();
     tableBody.appendChild(row);
-    // console.log(row);
-    // for(var w = 0; w < stores.length; w++){
-    //   var hrTotal = stores[w].hourly[0];
-    //   console.log(hrTotal);
-    // }
   }
-
+  // var hourTotal;
+  // for(var hours = 1; hours < time.length - 1; hours++){
+  //   hourTotal = 0;
+  //   console.log(time[hours]);
+  //   for(var storeC = 0; storeC < stores.length; storeC++){
+  //     hourTotal += stores[storeC].this.hourly[cookiesPerHour];
+  //     console.log(hourTotal[cookiesPerHour]);
+  //     totalData.textContent = hourTotal[hours];
+  //   }
+  // }
+  // totalHead.appendChild(totalData);
+  // totalHead.appendChild(row);
   salesTable.appendChild(tableBody);
 
   var main = document.getElementById('store_info');
