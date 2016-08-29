@@ -7,7 +7,7 @@ function Store(location, minCust, maxCust, avgCookies) {
   this.maxCust = maxCust;
   this.avgCookies = avgCookies;
   this.totalCookie = 0;
-
+  this.hourly = [];
   stores.push(this);
 
 };
@@ -21,7 +21,7 @@ Store.prototype.cookiesPerHour = function(){
 };
 
 Store.prototype.cookiesPerDay = function(){
-  this.hourly = [];
+  // this.hourly = [];
   for(var i = 0; i < 14; i++){
     this.hourly.push(this.cookiesPerHour());
     this.totalCookie += this.cookiesPerHour();
@@ -84,7 +84,7 @@ var seaTac = new Store('Seatac Airport', 3, 24, 1.2);
 var seaCen = new Store('Seattle Center', 11, 38, 3.7);
 var capHill = new Store('Capital Hill', 20, 38, 2.3);
 var alki = new Store('Alki', 2, 16, 4.6);
-
+var hourTotal;
 function createTable () {
 
   var salesTable = document.createElement('table');
@@ -109,15 +109,14 @@ function createTable () {
     tableBody.appendChild(row);
   }
   // var hourTotal;
-  // for(var hours = 1; hours < time.length - 1; hours++){
-  //   hourTotal = 0;
-  //   console.log(time[hours]);
-  //   for(var storeC = 0; storeC < stores.length; storeC++){
-  //     hourTotal += stores[storeC].this.hourly[cookiesPerHour];
-  //     console.log(hourTotal[cookiesPerHour]);
-  //     totalData.textContent = hourTotal[hours];
-  //   }
-  // }
+  for(var hours = 1; hours < time.length - 1; hours++){
+    hourTotal = 0;
+    console.log(time[hours]);
+    for(var storeC = 0; storeC < stores.length; storeC++){
+      hourTotal += stores[storeC].hourly[hours];
+      totalData.textContent = hourTotal[hours];
+    }
+  }
   // totalHead.appendChild(totalData);
   // totalHead.appendChild(row);
   salesTable.appendChild(tableBody);
