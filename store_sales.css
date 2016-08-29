@@ -44,18 +44,21 @@ a#store:hover{
 }
 
 .products1 {
-  width: 1200px;
+  width: 800px;
   margin: 0 auto;
 }
 .products {
   float: left;
-  display: inline;
   height: 470px;
-  width: 400px;
+  width: 250px;
   background-color: rgb(210, 230, 240);
+  margin-right: 25px;
+}
+.products: last-child {
+  margin-right: 0px;
 }
 .products img {
   display: block;
-  width: 300px;
-  margin: 0 auto;
+  width: 250px;
+  text-align: center;
 }
