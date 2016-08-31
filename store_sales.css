@@ -1,3 +1,4 @@
+
 html {
   background-color: rgb(190, 210, 220);
 }
@@ -9,11 +10,9 @@ html {
 }
 ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin-left: 15px;
 }
 li {
+  margin-left: 175px;
   float: left;
   border: 1px solid black;
   border-radius: 20px;
@@ -44,13 +43,13 @@ a#store:hover{
 }
 
 .products1 {
-  width: 800px;
+  width: 775px;
   margin: 0 auto;
 }
 .products {
   float: left;
   height: 470px;
-  width: 250px;
+  width: 225px;
   background-color: rgb(210, 230, 240);
   margin-right: 25px;
 }
@@ -59,6 +58,6 @@ a#store:hover{
 }
 .products img {
   display: block;
-  width: 250px;
+  width: 225px;
   text-align: center;
 }
